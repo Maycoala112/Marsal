@@ -1,0 +1,99 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #7A2E3A;
+  font-family: 'Nunito', sans-serif;
+  color: #FFF4F7;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  padding-top: 20px;
+}
+
+/* 🌷 TULIPA SIMPLES + CAULE */
+.tulipa {
+  position: absolute;
+  width: 45px;
+  height: 100px;
+  animation: crescer 0.6s ease forwards;
+}
+
+/* FLOR */
+.tulipa::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 40px;
+  height: 50px;
+  background: currentColor;
+  border-radius: 50% 50% 40% 40%;
+  transform: translateX(-50%);
+}
+
+/* CAULE */
+.tulipa::before {
+  content: '';
+  position: absolute;
+  top: 45px;
+  left: 50%;
+  width: 6px;
+  height: 55px;
+  background: #3FA34D;
+  border-radius: 10px;
+  transform: translateX(-50%);
+}
+
+/* 🌷 TULIPA GIGANTE */
+.final {
+  display: none;
+  position: absolute;
+  inset: 0;
+  background: rgba(122,46,58,0.9);
+  text-align: center;
+  padding-top: 60px;
+}
+
+.tulipa-gigante {
+  width: 240px;
+  height: 340px;
+  background: #E75480;
+  border-radius: 50% 50% 40% 40%;
+  margin: 40px auto 0;
+  cursor: pointer;
+  animation: crescer 1s ease forwards;
+}
+
+/* ANIMAÇÃO */
+@keyframes crescer {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .tulipa {
+    width: 40px;
+    height: 90px;
+  }
+
+  .tulipa-gigante {
+    width: 180px;
+    height: 260px;
+  }
+}
